@@ -6,11 +6,11 @@ function App() {
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
-      <Router>        
+      <Router>
         <Route path="/" exact>
           <MovieList />
         </Route>
-        
+
         {/* Details page */}
 
         {/* Add Movie page */}

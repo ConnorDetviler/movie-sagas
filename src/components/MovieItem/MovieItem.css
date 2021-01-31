@@ -1,0 +1,9 @@
+.movie-card {
+    justify-self: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 5px 8px 10px #9f9f9f;
+}
