@@ -1,4 +1,9 @@
+import { useHistory } from 'react-router-dom'
+
 function AddMovie() {
+
+    const history = useHistory();
+
     return (
         <div>
             <form action="">
@@ -22,7 +27,7 @@ function AddMovie() {
                 </select>
                 <input type="submit"/>
             </form>
-            <button>cancel</button>
+            <button onClick={() => history.push('/')} >cancel</button>
         </div>
     )
 }

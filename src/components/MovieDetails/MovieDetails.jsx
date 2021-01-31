@@ -18,10 +18,6 @@ function MovieDetails() {
         });
     }, []);
 
-    const toMovieList = () => {
-        history.push('/')
-    }
-
     return(
         // <p>hello</p>
         <div>
@@ -34,7 +30,7 @@ function MovieDetails() {
                     return <li key={movieDetails.genres.indexOf(genre)}>{genre}</li>
                 })}
             </ul>
-            <button onClick={toMovieList} >Back</button>
+            <button onClick={() => history.push('/')} >Back</button>
         </div>
     )
 }

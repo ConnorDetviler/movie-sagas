@@ -1,10 +1,13 @@
-import {HashRouter as Router, Route} from 'react-router-dom';
+import {useHistory, HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import AddMovie from '../AddMovie/AddMovie';
 
 function App() {
+
+  const history = useHistory();
+
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
