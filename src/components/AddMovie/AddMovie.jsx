@@ -1,16 +1,56 @@
 import { useHistory } from 'react-router-dom'
+import { useState } from 'react'
 
 function AddMovie() {
 
     const history = useHistory();
 
+    let [newMovie, setNewMovie] = useState({
+        title: '',
+        poster: '',
+        description: '',
+        genre_id: ''
+    })
+
+    const handleChange = (event) => {
+        // console.log(event.target.name, event.target.value)
+        const value = event.target.value;
+        setNewMovie({...newMovie, [event.target.name]: value})
+    }
+
+    const newMovieSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <div>
-            <form action="">
-                <input placeholder="title" type="text"/>
-                <input placeholder="image url" type="text"/>
-                <textarea placeholder="description"></textarea>
-                <select>
+            <h2>Add a new movie!</h2>
+            <form onSubmit={newMovieSubmit}>
+                <input
+                    placeholder="title"
+                    type="text"
+                    value={newMovie.title}
+                    onChange={handleChange}
+                    name="title"
+                />
+                <input
+                    placeholder="image url"
+                    type="text"
+                    value={newMovie.poster}
+                    onChange={handleChange}
+                    name="poster"
+                />
+                <textarea
+                    placeholder="description"
+                    value={newMovie.description}
+                    onChange={handleChange}
+                    name="description"
+                ></textarea>
+                <select
+                    value={newMovie.genre_id}
+                    onChange={handleChange}
+                    name="genre_id"
+                >
                     <option defaultValue="1">Adventure</option>
                     <option value="2">Animated</option>
                     <option value="3">Biographical</option>
