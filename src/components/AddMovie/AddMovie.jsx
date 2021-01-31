@@ -29,6 +29,7 @@ function AddMovie() {
             description: '',
             genre_id: 1
         })
+        history.push('/');
     }
 
     return (
