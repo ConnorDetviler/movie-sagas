@@ -16,7 +16,7 @@ function MovieDetails() {
             type: 'FETCH_GENRES',
             payload: id
         });
-    });
+    }, []);
 
     const toMovieList = () => {
         history.push('/')
@@ -31,7 +31,7 @@ function MovieDetails() {
             <img src={movieDetails.poster} alt={"movie Poster for", movieDetails.title} />
             <ul>
                 {movieDetails.genres.map((genre) => {
-                    return <li>{genre}</li>
+                    return <li key={movieDetails.genres.indexOf(genre)}>{genre}</li>
                 })}
             </ul>
             <button onClick={toMovieList} >Back</button>
