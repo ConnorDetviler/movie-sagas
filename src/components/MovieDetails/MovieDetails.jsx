@@ -18,6 +18,10 @@ function MovieDetails() {
         });
     });
 
+    const toMovieList = () => {
+        history.push('/')
+    }
+
     return(
         // <p>hello</p>
         <div>
@@ -25,12 +29,12 @@ function MovieDetails() {
             <h1>{movieDetails.title}</h1>
             <p>{movieDetails.description}</p>
             <img src={movieDetails.poster} alt={"movie Poster for", movieDetails.title} />
-            {/* <button onClick={toMovieList} >Back</button> */}
             <ul>
                 {movieDetails.genres.map((genre) => {
                     return <li>{genre}</li>
                 })}
             </ul>
+            <button onClick={toMovieList} >Back</button>
         </div>
     )
 }
