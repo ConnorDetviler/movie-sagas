@@ -14,7 +14,7 @@ function MovieItem({movie}) {
             type: 'FETCH_GENRES',
             payload: movie
         })
-        history.push(`/details/:${movie.id}`)
+        history.push(`/details/${movie.id}`)
     }
 
 
