@@ -47,6 +47,7 @@ function* fetchGenres(action) {
             id: movieDetails[0].id,
             title: movieDetails[0].title,
             description: movieDetails[0].description,
+            poster: movieDetails[0].poster,
             genres: genreList
         }
         console.log('Reducer object: ', movieReducerObject)
@@ -73,11 +74,19 @@ const movies = (state = [], action) => {
     }
 }
 
+const defaultGenreState = {
+    id: 0,
+    title: 'movie title',
+    poster: 'img',
+    description: 'movie description',
+    genres: ['genre']
+}
+
 // Used to store the movie genres
-const genres = (state = [], action) => {
+const genres = (state = defaultGenreState, action) => {
     switch (action.type) {
         case 'SET_GENRES':
-            return action.payload;
+            return {...state, ...action.payload}
         default:
             return state;
     }

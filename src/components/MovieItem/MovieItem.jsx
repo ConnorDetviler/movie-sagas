@@ -10,10 +10,6 @@ function MovieItem({movie}) {
 
     const toDetails = () => {
         console.log('clicked: ', movie.title)
-        // dispatch({
-        //     type: 'FETCH_GENRES',
-        //     payload: movie
-        // })
         history.push(`/details/${movie.id}`)
     }
 
