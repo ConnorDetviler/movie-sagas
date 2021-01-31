@@ -32,11 +32,28 @@ function* fetchGenres(action) {
     // get genres for selected movie
     const id = action.payload;
     try {
-        const movieDetails = yield axios.get(`/api/genre/${id}`);
-        console.log("movie details object: ", movieDetails);
+        const movieGet = yield axios.get(`/api/genre/${id}`);
+        const movieDetails = movieGet.data
+
+        // for loop returns only the genres from the data recieved
+        // then stores them in genreList array
+        let genreList = [];
+        for(let i = 0; i < movieDetails.length; i++) {
+            genreList.push(movieDetails[i].name)
+        }
+
+        // object to be stored in reducer - only data that is needed
+        const movieReducerObject = {
+            id: movieDetails[0].id,
+            title: movieDetails[0].title,
+            description: movieDetails[0].description,
+            genres: genreList
+        }
+        console.log('Reducer object: ', movieReducerObject)
+
         yield put({
             type: 'SET_GENRES',
-            payload: movieDetails.data
+            payload: movieReducerObject
         })
     } catch (error) {
         console.log('error in fetchGenres', error)
