@@ -7,3 +7,7 @@
     margin-bottom: 20px;
     box-shadow: 5px 8px 10px #9f9f9f;
 }
+
+.poster-image {
+    max-width: 200px;
+}

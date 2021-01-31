@@ -17,7 +17,7 @@ function MovieItem({movie}) {
     return (
         <div className="movie-card" onClick={toDetails}>
             <h3>{movie.title}</h3>
-            <img src={movie.poster} alt={movie.title}/>
+            <img src={movie.poster} alt={movie.title} className="poster-image"/>
         </div>
     )
 }
